@@ -23,7 +23,7 @@
  */
 
 import type { CheckboxProps, CheckboxStyle } from './props'
-import type { ComponentTheme } from '@instructure/shared-types'
+import type { NewComponentTypes, SharedTokens } from '@instructure/ui-themes'
 
 /**
  * ---
@@ -36,20 +36,21 @@ import type { ComponentTheme } from '@instructure/shared-types'
  * @return {Object} The final style object, which will be used in the component
  */
 const generateStyle = (
-  componentTheme: ComponentTheme,
-  props: CheckboxProps
+  componentTheme: NewComponentTypes['Checkbox'],
+  props: CheckboxProps,
+  _sharedTokens: SharedTokens
 ): CheckboxStyle => {
   const { inline, disabled } = props
 
   return {
     requiredInvalid: {
-      color: componentTheme.requiredInvalidColor
+      color: 'pink' //componentTheme.requiredInvalidColor
     },
     indentedError: {
-      paddingLeft: componentTheme.checkErrorInsetWidth
+      paddingLeft: componentTheme.gap // todo
     },
     indentedToggleError: {
-      paddingLeft: componentTheme.toggleErrorInsetWidth,
+      paddingLeft: componentTheme.gap // todo
     },
     checkbox: {
       label: 'checkbox',
