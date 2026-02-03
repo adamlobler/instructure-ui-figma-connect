@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-import type { MenuItemTheme } from '@instructure/shared-types'
+import type { NewComponentTypes } from '@instructure/ui-themes'
 import type { MenuItemProps, MenuItemStyle } from './props'
 
 /**
@@ -36,7 +36,7 @@ import type { MenuItemProps, MenuItemStyle } from './props'
  * @return {Object} The final style object, which will be used in the component
  */
 const generateStyle = (
-  componentTheme: MenuItemTheme,
+  componentTheme: NewComponentTypes['MenuItem'],
   props: MenuItemProps
 ): MenuItemStyle => {
   const { type, disabled } = props
@@ -53,14 +53,14 @@ const generateStyle = (
 
   const roleStyles = isRadioOrCheckbox
     ? {
-        paddingInlineStart: componentTheme.labelPadding
+        paddingInlineEnd: componentTheme.labelPadding
       }
     : {}
 
   const roleIconStyles = isRadioOrCheckbox
     ? {
-        insetInlineStart: componentTheme.iconPadding,
-        insetInlineEnd: 'auto'
+        insetInlineStart: 'auto',
+        insetInlineEnd: componentTheme.iconPadding
       }
     : {}
 
@@ -80,7 +80,7 @@ const generateStyle = (
       position: 'relative',
       border: 'none',
       outline: 'none',
-      padding: componentTheme.padding,
+      padding: `${componentTheme.paddingVertical} ${componentTheme.paddingHorizontal}`,
       margin: '0',
       width: '100%',
       borderRadius: 'initial',
@@ -104,9 +104,6 @@ const generateStyle = (
         background: componentTheme.activeBackground,
         '[class*="menuItem__label"]': {
           color: componentTheme.activeLabelColor
-        },
-        '[class*="menuItem__icon"]': {
-          color: componentTheme.activeIconColor
         }
       },
       //removes extra ff button spacing
@@ -133,7 +130,6 @@ const generateStyle = (
       top: '0',
       width: '1em',
       height: '100%',
-      color: componentTheme.iconColor,
       ...roleIconStyles,
       ...flyoutIconStyles
     },
