@@ -33,7 +33,7 @@ const alias = {
   ),
   '@instructure/ui-alerts$': path.resolve(import.meta.dirname, '../ui-alerts/src/'),
   '@instructure/ui-avatar$': path.resolve(import.meta.dirname, '../ui-avatar/src/'),
-  '@instructure/ui-badge$': path.resolve(import.meta.dirname, '../ui-badge/src/'),
+  '@instructure/ui-badge$': path.resolve(import.meta.dirname, '../ui-badge/src/Badge/11_5/'),
   '@instructure/ui-billboard$': path.resolve(
     import.meta.dirname,
     '../ui-billboard/src/'
@@ -98,7 +98,7 @@ const alias = {
   '@instructure/ui-link$': path.resolve(import.meta.dirname, '../ui-link/src/'),
   '@instructure/ui-list$': path.resolve(import.meta.dirname, '../ui-list/src/'),
   '@instructure/ui-menu$': path.resolve(import.meta.dirname, '../ui-menu/src/'),
-  '@instructure/ui-metric$': path.resolve(import.meta.dirname, '../ui-metric/src/'),
+  '@instructure/ui-metric$': path.resolve(import.meta.dirname, '../ui-metric/src/Metric/11_5'),
   '@instructure/ui-modal$': path.resolve(import.meta.dirname, '../ui-modal/src/'),
   '@instructure/ui-motion$': path.resolve(import.meta.dirname, '../ui-motion/src/'),
   '@instructure/ui-navigation$': path.resolve(
@@ -124,7 +124,7 @@ const alias = {
     '../ui-pagination/src/'
   ),
   '@instructure/ui-pages$': path.resolve(import.meta.dirname, '../ui-pages/src/'),
-  '@instructure/ui-pill$': path.resolve(import.meta.dirname, '../ui-pill/src/'),
+  '@instructure/ui-pill$': path.resolve(import.meta.dirname, '../ui-pill/src/Pill/11_5/'),
   '@instructure/ui-popover$': path.resolve(import.meta.dirname, '../ui-popover/src/'),
   '@instructure/ui-position$': path.resolve(import.meta.dirname, '../ui-position/src/'),
   '@instructure/ui-portal$': path.resolve(import.meta.dirname, '../ui-portal/src/'),
@@ -135,7 +135,7 @@ const alias = {
   ),
   '@instructure/ui-range-input$': path.resolve(
     import.meta.dirname,
-    '../ui-range-input/src/'
+    '../ui-range-input/src/RangeInput/11_5'
   ),
   '@instructure/ui-rating$': path.resolve(import.meta.dirname, '../ui-rating/src/'),
   '@instructure/ui-responsive$': path.resolve(
@@ -195,7 +195,7 @@ const alias = {
     '../ui-truncate-text/src/'
   ),
   '@instructure/ui-utils$': path.resolve(import.meta.dirname, '../ui-utils/src/'),
-  '@instructure/ui-view$': path.resolve(import.meta.dirname, '../ui-view/src/'),
+  '@instructure/ui-view$': path.resolve(import.meta.dirname, '../ui-view/src/exports/11_5'),
   '@instructure/canvas-theme$': path.resolve(
     import.meta.dirname,
     '../canvas-theme/src/'

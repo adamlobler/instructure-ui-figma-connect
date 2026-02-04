@@ -22,5 +22,39 @@
  * SOFTWARE.
  */
 
-export { RangeInput } from './RangeInput'
-export type { RangeInputProps } from './RangeInput/props'
+import type {
+  MetricTheme,
+  OtherHTMLAttributes,
+  Renderable
+} from '@instructure/shared-types'
+import type { WithStyleProps, ComponentStyle } from '@instructure/emotion'
+
+type MetricOwnProps = {
+  textAlign: 'start' | 'center' | 'end'
+  renderLabel?: Renderable
+  renderValue?: Renderable
+  /**
+   * Set to true when a child of MetricGroup so the appropriate
+   * aria labels get set
+   */
+  isGroupChild: boolean
+}
+
+type PropKeys = keyof MetricOwnProps
+
+type AllowedPropKeys = Readonly<Array<PropKeys>>
+
+type MetricProps = MetricOwnProps &
+  WithStyleProps<MetricTheme, MetricStyle> &
+  OtherHTMLAttributes<MetricOwnProps>
+
+type MetricStyle = ComponentStyle<'metric' | 'label' | 'value'>
+const allowedProps: AllowedPropKeys = [
+  'textAlign',
+  'renderLabel',
+  'renderValue',
+  'isGroupChild'
+]
+
+export type { MetricProps, MetricStyle }
+export { allowedProps }

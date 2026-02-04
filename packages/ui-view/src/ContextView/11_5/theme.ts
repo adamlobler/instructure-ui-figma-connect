@@ -22,5 +22,27 @@
  * SOFTWARE.
  */
 
-export { Badge } from './Badge'
-export type { BadgeProps } from './Badge/props'
+import type { Theme } from '@instructure/ui-themes'
+import { ContextViewTheme } from '@instructure/shared-types'
+
+/**
+ * Generates the theme object for the component from the theme and provided additional information
+ * @param  {Object} theme The actual theme object.
+ * @return {Object} The final theme object with the overrides and component variables
+ */
+const generateComponentTheme = (theme: Theme): ContextViewTheme => {
+  const componentVariables: ContextViewTheme = {
+    arrowSize: '0.5rem',
+    arrowBorderWidth: theme?.borders?.widthSmall,
+    arrowBackgroundColor: theme?.colors?.contrasts?.white1010,
+    arrowBorderColor: theme?.colors?.contrasts?.grey1424,
+    arrowBackgroundColorInverse: theme?.colors?.contrasts?.grey125125,
+    arrowBorderColorInverse: 'transparent'
+  }
+
+  return {
+    ...componentVariables
+  }
+}
+
+export default generateComponentTheme

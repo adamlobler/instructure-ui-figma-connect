@@ -22,8 +22,24 @@
  * SOFTWARE.
  */
 
-export { ContextView } from './ContextView'
-export { View } from './View'
+import type { Theme } from '@instructure/ui-themes'
+import { MetricGroupTheme } from '@instructure/shared-types'
 
-export type { ContextViewProps } from './ContextView/props'
-export type { ViewProps, ViewOwnProps } from './View/props'
+/**
+ * Generates the theme object for the component from the theme and provided additional information
+ * @param  {Object} theme The actual theme object.
+ * @return {Object} The final theme object with the overrides and component variables
+ */
+const generateComponentTheme = (theme: Theme): MetricGroupTheme => {
+  const { typography } = theme
+
+  const componentVariables: MetricGroupTheme = {
+    lineHeight: typography?.lineHeightCondensed
+  }
+
+  return {
+    ...componentVariables
+  }
+}
+
+export default generateComponentTheme

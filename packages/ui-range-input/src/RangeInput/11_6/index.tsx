@@ -221,3 +221,4 @@ class RangeInput extends Component<RangeInputProps, RangeInputState> {
 
 export default RangeInput
 export { RangeInput }
+export type { RangeInputProps }

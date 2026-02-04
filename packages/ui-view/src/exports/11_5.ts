@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-export { Metric } from './Metric'
-export { MetricGroup } from './MetricGroup'
+export { ContextView } from '../ContextView/11_5'
+export { View } from '../View/11_5'
 
-export type { MetricProps } from './Metric/props'
-export type { MetricGroupProps } from './MetricGroup/props'
+export type { ContextViewProps } from '../ContextView/11_5/props'
+export type { ViewProps, ViewOwnProps } from '../View/11_5/props'

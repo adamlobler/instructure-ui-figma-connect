@@ -29,7 +29,7 @@ import { passthroughProps } from '@instructure/ui-react-utils'
 import { Tooltip } from '@instructure/ui-tooltip'
 import type { TooltipRenderChildrenArgs } from '@instructure/ui-tooltip'
 
-import { withStyle } from '@instructure/emotion'
+import { withStyleRework as withStyle } from '@instructure/emotion'
 
 import generateStyle from './styles'
 import generateComponentTheme from './theme'

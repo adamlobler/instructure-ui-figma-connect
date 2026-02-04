@@ -48,10 +48,16 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./types/index.d.ts",
-      "import": "./es/index.js",
-      "require": "./lib/index.js",
-      "default": "./es/index.js"
+      "types": "./types/Badge/11_5/index.d.ts",
+      "import": "./es/Badge/11_5/index.js",
+      "require": "./lib/Badge/11_5/index.js",
+      "default": "./es/Badge/11_5/index.js"
+    },
+    "./v11_6": {
+      "types": "./types/Badge/11_6/index.d.ts",
+      "import": "./es/Badge/11_6/index.js",
+      "require": "./lib/Badge/11_6/index.js",
+      "default": "./es/Badge/11_6/index.js"
     },
     "./lib/*": "./lib/*",
     "./es/*": "./es/*",

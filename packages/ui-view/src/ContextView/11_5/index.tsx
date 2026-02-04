@@ -24,12 +24,13 @@
 
 import { Component } from 'react'
 
-import { withStyle } from '@instructure/emotion'
+import { withStyleRework as withStyle } from '@instructure/emotion'
 import { omitProps } from '@instructure/ui-react-utils'
 
-import { View } from '../View'
+import { View } from '@instructure/ui-view'
 
 import generateStyle from './styles'
+import generateComponentTheme from './theme'
 import { allowedProps } from './props'
 import type { ContextViewProps } from './props'
 
@@ -39,7 +40,7 @@ category: components
 ---
 **/
 
-@withStyle(generateStyle)
+@withStyle(generateStyle, generateComponentTheme)
 class ContextView extends Component<ContextViewProps> {
   static readonly componentId = 'ContextView'
   static allowedProps = allowedProps
@@ -52,7 +53,7 @@ class ContextView extends Component<ContextViewProps> {
     children: null,
     textAlign: 'start',
     background: 'default',
-    shadow: 'above',
+    shadow: 'resting',
     placement: 'center end'
   }
 
@@ -114,7 +115,7 @@ class ContextView extends Component<ContextViewProps> {
         <View
           css={styles?.contextView__content}
           display="block"
-          borderRadius={styles?.borderRadius}
+          borderRadius="medium"
           borderWidth="small"
           borderColor={
             borderColor ||
