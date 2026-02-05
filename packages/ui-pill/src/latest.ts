@@ -22,8 +22,5 @@
  * SOFTWARE.
  */
 
-export { ContextView } from '../ContextView/11_5'
-export { View } from '../View/11_5'
-
-export type { ContextViewProps } from '../ContextView/11_5/props'
-export type { ViewProps, ViewOwnProps } from '../View/11_5/props'
+export { Pill } from './Pill/11_6'
+export type { PillProps } from './Pill/11_6/props'

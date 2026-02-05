@@ -63,16 +63,22 @@
   },
   "exports": {
     ".": {
-      "types": "./types/exports/11_5.d.ts",
-      "import": "./es/exports/11_5.js",
-      "require": "./lib/exports/11_5.js",
-      "default": "./es/exports/11_5.js"
+      "types": "./types/11_5.d.ts",
+      "import": "./es/11_5.js",
+      "require": "./lib/11_5.js",
+      "default": "./es/11_5.js"
     },
     "./v11_6": {
-      "types": "./types/exports/11_6.d.ts",
-      "import": "./es/exports/11_6.js",
-      "require": "./lib/exports/11_6.js",
-      "default": "./es/exports/11_6.js"
+      "types": "./types/11_6.d.ts",
+      "import": "./es/11_6.js",
+      "require": "./lib/11_6.js",
+      "default": "./es/11_6.js"
+    },
+    "./latest": {
+      "types": "./types/latest.d.ts",
+      "import": "./es/latest.js",
+      "require": "./lib/latest.js",
+      "default": "./es/latest.js"
     },
     "./lib/*": "./lib/*",
     "./es/*": "./es/*",

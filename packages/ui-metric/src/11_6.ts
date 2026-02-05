@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-export { Metric } from '../Metric/11_5'
-export { MetricGroup } from '../MetricGroup/11_5'
+export { Metric } from './Metric/11_6'
+export { MetricGroup } from './MetricGroup/11_6'
 
-export type { MetricProps } from '../Metric/11_5/props'
-export type { MetricGroupProps } from '../MetricGroup/11_5/props'
+export type { MetricProps } from './Metric/11_6/props'
+export type { MetricGroupProps } from './MetricGroup/11_6/props'

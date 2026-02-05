@@ -59,6 +59,12 @@
       "require": "./lib/Badge/11_6/index.js",
       "default": "./es/Badge/11_6/index.js"
     },
+    "./latest": {
+      "types": "./types/latest.d.ts",
+      "import": "./es/latest.js",
+      "require": "./lib/latest.js",
+      "default": "./es/latest.js"
+    },
     "./lib/*": "./lib/*",
     "./es/*": "./es/*",
     "./types/*": "./types/*",

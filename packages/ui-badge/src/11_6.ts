@@ -22,8 +22,5 @@
  * SOFTWARE.
  */
 
-export { Metric } from '../Metric/11_6'
-export { MetricGroup } from '../MetricGroup/11_6'
-
-export type { MetricProps } from '../Metric/11_6/props'
-export type { MetricGroupProps } from '../MetricGroup/11_6/props'
+export { Badge } from './Badge/11_6'
+export type { BadgeProps } from './Badge/11_6/props'

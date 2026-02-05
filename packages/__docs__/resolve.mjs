@@ -195,7 +195,7 @@ const alias = {
     '../ui-truncate-text/src/'
   ),
   '@instructure/ui-utils$': path.resolve(import.meta.dirname, '../ui-utils/src/'),
-  '@instructure/ui-view$': path.resolve(import.meta.dirname, '../ui-view/src/exports/11_5'),
+  '@instructure/ui-view$': path.resolve(import.meta.dirname, '../ui-view/src/11_5'),
   '@instructure/canvas-theme$': path.resolve(
     import.meta.dirname,
     '../canvas-theme/src/'
