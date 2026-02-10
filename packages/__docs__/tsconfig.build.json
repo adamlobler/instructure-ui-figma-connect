@@ -56,6 +56,9 @@
       "path": "../ui-billboard/tsconfig.build.json"
     },
     {
+      "path": "../ui-card/tsconfig.build.json"
+    },
+    {
       "path": "../ui-breadcrumb/tsconfig.build.json"
     },
     {

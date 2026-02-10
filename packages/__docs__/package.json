@@ -41,6 +41,7 @@
     "@instructure/ui-avatar": "workspace:*",
     "@instructure/ui-badge": "workspace:*",
     "@instructure/ui-billboard": "workspace:*",
+    "@instructure/ui-card": "workspace:*",
     "@instructure/ui-breadcrumb": "workspace:*",
     "@instructure/ui-buttons": "workspace:*",
     "@instructure/ui-byline": "workspace:*",

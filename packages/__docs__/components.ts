@@ -31,6 +31,7 @@ export { Alert } from '@instructure/ui-alerts'
 export { Avatar } from '@instructure/ui-avatar'
 export { Badge } from '@instructure/ui-badge'
 export { Billboard } from '@instructure/ui-billboard'
+export { Card } from '@instructure/ui-card'
 export {
   BaseButton,
   Button,
