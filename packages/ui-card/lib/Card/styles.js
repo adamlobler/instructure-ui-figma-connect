@@ -42,21 +42,43 @@ var _uiThemes = require('@instructure/ui-themes')
 const generateStyle = (_componentTheme, params, sharedTokens) => {
   const size = params.size || 'medium'
   const contentType = params.contentType || 'content'
-  const paddingBySize = {
+
+  // Base card padding (used by nestedContainer). Content adds inner-frame padding per Figma (two frames).
+  const paddingCardBySize = {
     small: sharedTokens.spacing.padding.card.sm,
     medium: sharedTokens.spacing.padding.card.md,
     large: sharedTokens.spacing.padding.card.lg
+  }
+  const gapCardsBySize = {
+    small: sharedTokens.spacing.general.spaceXs,
+    medium: sharedTokens.spacing.general.spaceMd,
+    large: sharedTokens.spacing.general.spaceLg
+  }
+  const paddingByContentTypeAndSize = {
+    content: {
+      small: `calc(${paddingCardBySize.small} + ${gapCardsBySize.small})`,
+      medium: `calc(${paddingCardBySize.medium} + ${gapCardsBySize.medium})`,
+      large: `calc(${paddingCardBySize.large} + ${gapCardsBySize.large})`
+    },
+    nestedContainer: {
+      small: paddingCardBySize.small,
+      medium: paddingCardBySize.medium,
+      large: paddingCardBySize.large
+    }
   }
   const backgroundByContentType = {
     content: sharedTokens.background.containerColor,
     nestedContainer: sharedTokens.background.containerColor
   }
-  const boxShadowByContentType = {
-    // Match Figma card elevation: full cards have shadow, nested containers are flat
-    content: (0, _uiThemes.boxShadowObjectsToCSSString)(
-      sharedTokens.boxShadow.elevation1
-    ),
-    nestedContainer: 'none'
+  const boxShadow = (0, _uiThemes.boxShadowObjectsToCSSString)(
+    sharedTokens.boxShadow.elevation1
+  )
+
+  // Card border radius by size only (borderRadius.card.nestedContainer is for content inside the card).
+  const radiusBySize = {
+    small: sharedTokens.borderRadius.sm,
+    medium: sharedTokens.borderRadius.md,
+    large: sharedTokens.borderRadius.lg
   }
   return {
     card: {
@@ -64,10 +86,10 @@ const generateStyle = (_componentTheme, params, sharedTokens) => {
       boxSizing: 'border-box',
       display: 'block',
       maxWidth: '100%',
-      borderRadius: sharedTokens.legacy.radiusMedium,
-      padding: paddingBySize[size],
+      borderRadius: radiusBySize[size],
+      padding: paddingByContentTypeAndSize[contentType][size],
       backgroundColor: backgroundByContentType[contentType],
-      boxShadow: boxShadowByContentType[contentType]
+      boxShadow
     }
   }
 }

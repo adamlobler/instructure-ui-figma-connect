@@ -50,10 +50,31 @@ const generateStyle = (
   const size: CardSize = params.size || 'medium'
   const contentType: CardContentType = params.contentType || 'content'
 
-  const paddingBySize: Record<CardSize, string> = {
+  // Base card padding (used by nestedContainer). Content adds inner-frame padding per Figma (two frames).
+  const paddingCardBySize: Record<CardSize, string> = {
     small: sharedTokens.spacing.padding.card.sm,
     medium: sharedTokens.spacing.padding.card.md,
     large: sharedTokens.spacing.padding.card.lg
+  }
+  const gapCardsBySize: Record<CardSize, string> = {
+    small: sharedTokens.spacing.general.spaceXs,
+    medium: sharedTokens.spacing.general.spaceMd,
+    large: sharedTokens.spacing.general.spaceLg
+  }
+  const paddingByContentTypeAndSize: Record<
+    CardContentType,
+    Record<CardSize, string>
+  > = {
+    content: {
+      small: `calc(${paddingCardBySize.small} + ${gapCardsBySize.small})`,
+      medium: `calc(${paddingCardBySize.medium} + ${gapCardsBySize.medium})`,
+      large: `calc(${paddingCardBySize.large} + ${gapCardsBySize.large})`
+    },
+    nestedContainer: {
+      small: paddingCardBySize.small,
+      medium: paddingCardBySize.medium,
+      large: paddingCardBySize.large
+    }
   }
 
   const backgroundByContentType: Record<CardContentType, string> = {
@@ -61,10 +82,15 @@ const generateStyle = (
     nestedContainer: sharedTokens.background.containerColor
   }
 
-  const boxShadowByContentType: Record<CardContentType, string> = {
-    // Match Figma card elevation: full cards have shadow, nested containers are flat
-    content: boxShadowObjectsToCSSString(sharedTokens.boxShadow.elevation1),
-    nestedContainer: 'none'
+  const boxShadow = boxShadowObjectsToCSSString(
+    sharedTokens.boxShadow.elevation1
+  )
+
+  // Card border radius by size only (borderRadius.card.nestedContainer is for content inside the card).
+  const radiusBySize: Record<CardSize, string> = {
+    small: sharedTokens.borderRadius.sm,
+    medium: sharedTokens.borderRadius.md,
+    large: sharedTokens.borderRadius.lg
   }
 
   return {
@@ -73,10 +99,10 @@ const generateStyle = (
       boxSizing: 'border-box',
       display: 'block',
       maxWidth: '100%',
-      borderRadius: sharedTokens.legacy.radiusMedium,
-      padding: paddingBySize[size],
+      borderRadius: radiusBySize[size],
+      padding: paddingByContentTypeAndSize[contentType][size],
       backgroundColor: backgroundByContentType[contentType],
-      boxShadow: boxShadowByContentType[contentType]
+      boxShadow
     }
   }
 }

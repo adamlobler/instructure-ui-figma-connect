@@ -20,20 +20,20 @@ Controls internal padding via shared spacing tokens: `paddingCardSmall`, `paddin
 ---
 type: example
 ---
-<View as="div" display="flex" gap="medium">
-  <View width="200px">
+<View as="div">
+<View as="div" padding="small">
     <Card size="small">
-      Small card – less padding
+      <Text as="p">Small card – less padding</Text>
     </Card>
   </View>
-  <View width="200px">
+<View as="div" padding="small">
     <Card size="medium">
-      Medium card (default)
+      <Text as="p">Medium card (default)</Text>
     </Card>
   </View>
-  <View width="200px">
+<View as="div" padding="small">
     <Card size="large">
-      Large card – more padding
+      <Text as="p">Large card – more padding</Text>
     </Card>
   </View>
 </View>
@@ -48,17 +48,19 @@ type: example
 ---
 type: example
 ---
-<View as="div" maxWidth="360px">
+<View as="div" maxWidth="360px" display="flex" gap="large">
+<View as="div" padding="small">
   <Card size="medium" contentType="content">
     <Heading level="h3" as="h3">Primary card</Heading>
     <Text as="p">This card uses the primary surface and has a light shadow.</Text>
   </Card>
-  <View margin="medium 0 0 0">
-    <Card size="medium" contentType="nestedContainer">
-      <Heading level="h3" as="h3">Nested container</Heading>
-      <Text as="p">This card uses the secondary surface and no shadow.</Text>
-    </Card>
   </View>
+  <View as="div" padding="small">
+  <Card size="medium" contentType="nestedContainer">
+    <Heading level="h3" as="h3">Nested container</Heading>
+    <Text as="p">This card uses the secondary surface and no shadow.</Text>
+  </Card>
+    </View>
 </View>
 ```
 
@@ -93,13 +95,3 @@ type: example
   </Card>
 </View>
 ```
-
-### Props
-
-| Prop          | Type                                | Default     | Description                                                 |
-| ------------- | ----------------------------------- | ----------- | ----------------------------------------------------------- |
-| `as`          | `AsElementType`                     | `'div'`     | The element to render as the root.                          |
-| `children`    | `ReactNode`                         | —           | Card contents.                                              |
-| `contentType` | `'content' \| 'nestedContainer'`    | `'content'` | Primary surface with shadow, or secondary nested container. |
-| `elementRef`  | `(el: HTMLElement \| null) => void` | —           | Ref callback for the root element.                          |
-| `size`        | `'small' \| 'medium' \| 'large'`    | `'medium'`  | Internal padding (uses sharedTokens card spacing).          |
