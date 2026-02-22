@@ -20,23 +20,39 @@ Controls internal padding via shared spacing tokens: `paddingCardSmall`, `paddin
 ---
 type: example
 ---
-<View as="div">
-<View as="div" padding="small">
-    <Card size="small">
-      <Text as="p">Small card – less padding</Text>
-    </Card>
-  </View>
-<View as="div" padding="small">
-    <Card size="medium">
-      <Text as="p">Medium card (default)</Text>
-    </Card>
-  </View>
-<View as="div" padding="small">
-    <Card size="large">
-      <Text as="p">Large card – more padding</Text>
-    </Card>
-  </View>
-</View>
+<Flex as="div" direction="column" gap="x-large">
+  <Flex as="div" wrap="wrap" gap="medium">
+      <Card size="small">
+        <Heading level="h3" as="h3">Small card</Heading>
+        <Text as="p">Less padding for compact layouts.</Text>
+      </Card>
+      <Card size="small">
+        <Heading level="h3" as="h3">Small card</Heading>
+        <Text as="p">Less padding for compact layouts.</Text>
+      </Card>
+      <Card size="small">
+        <Heading level="h3" as="h3">Small card</Heading>
+        <Text as="p">Less padding for compact layouts.</Text>
+      </Card>
+  </Flex>
+  <Flex as="div" wrap="wrap" gap="large">
+      <Card size="medium">
+        <Heading level="h2" as="h2" margin="none none small none">Medium card</Heading>
+        <Text as="p">Balanced padding for most content blocks and forms.</Text>
+      </Card>
+      <Card size="medium">
+        <Heading level="h2" as="h2" margin="none none small none">Medium card</Heading>
+        <Text as="p">Use for summaries, short descriptions, or compact forms.</Text>
+      </Card>
+    <View as="div" padding="small">
+      <Card size="large">
+        <Heading level="h1" as="h1" margin="none none small none">Large card</Heading>
+        <Text as="p" margin="none none small none">Spacious padding for long-form content or multi-section layouts. Large cards work well as the main content area on a page.</Text>
+        <Text as="p" size="small" color="secondary">The extra padding and width give room for lists, images, and actions without feeling cramped.</Text>
+      </Card>
+    </View>
+  </Flex>
+</Flex>
 ```
 
 ### Content type
@@ -60,7 +76,8 @@ type: example
   <View
     background="secondary"
     padding="small"
-    borderRadius="small"
+    borderRadius="medium"
+    borderWidth="small"
     as="div"
   >
     <Heading level="h3" as="h3">Nested container</Heading>

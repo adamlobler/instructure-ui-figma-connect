@@ -93,12 +93,25 @@ const generateStyle = (
     large: sharedTokens.borderRadius.lg
   }
 
+  // Min/max width by size (matches Figma Card component).
+  const minWidthBySize: Record<CardSize, string> = {
+    small: '15rem',
+    medium: '20rem',
+    large: '30rem'
+  }
+  const maxWidthBySize: Record<CardSize, string> = {
+    small: '25rem',
+    medium: '40rem',
+    large: '60rem'
+  }
+
   return {
     card: {
       label: 'card',
       boxSizing: 'border-box',
       display: 'block',
-      maxWidth: '100%',
+      minWidth: minWidthBySize[size],
+      maxWidth: maxWidthBySize[size],
       borderRadius: radiusBySize[size],
       padding: paddingByContentTypeAndSize[contentType][size],
       backgroundColor: backgroundByContentType[contentType],

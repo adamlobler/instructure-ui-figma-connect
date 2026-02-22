@@ -57,10 +57,15 @@ type CardOwnProps = {
   size?: CardSize
 
   /**
-   * Content type of the Card.
-   * Matches the Figma Card `contentType` prop.
-   * - `content` – default surface Card
-   * - `nestedContainer` – a lower-emphasis container used inside other Cards/layouts.
+   * Content type of the Card. Matches the Figma Card `contentType` variant.
+   * Both variants use the same elevation (shadow) and emphasis; the difference
+   * is in the padding and what goes inside:
+   *
+   * - **content** (default) – Extra padding for a spacious feel. Use when the
+   *   card holds main content, forms, or standalone blocks.
+   * - **nestedContainer** – Balanced padding between the card’s corner radius
+   *   and the container inside. Use when the card wraps another container or
+   *   nested layout so spacing stays consistent.
    */
   contentType?: CardContentType
 }
