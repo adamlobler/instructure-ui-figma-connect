@@ -138,3 +138,5 @@ export { TruncateList } from '@instructure/ui-truncate-list'
 export { canvas, canvasHighContrast } from '@instructure/ui-themes'
 // eslint-disable-next-line no-restricted-imports
 export { V12ChangelogTable } from './src/V12ChangelogTable'
+// eslint-disable-next-line no-restricted-imports
+export { default as SentimentPulseDashboard } from './src/SentimentPulseDashboard'

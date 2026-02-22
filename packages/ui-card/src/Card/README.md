@@ -48,7 +48,7 @@ type: example
 ---
 type: example
 ---
-<View as="div" maxWidth="360px" display="flex" gap="large">
+<View as="div"  display="flex" gap="large">
 <View as="div" padding="small">
   <Card size="medium" contentType="content">
     <Heading level="h3" as="h3">Primary card</Heading>
@@ -57,8 +57,18 @@ type: example
   </View>
   <View as="div" padding="small">
   <Card size="medium" contentType="nestedContainer">
+  <View
+    background="secondary"
+    padding="small"
+    borderRadius="small"
+    as="div"
+  >
     <Heading level="h3" as="h3">Nested container</Heading>
     <Text as="p">This card uses the secondary surface and no shadow.</Text>
+    <Text color="secondary" size="small">
+      The dashed border is for demo only to show the boundaries of the nested container's background.
+    </Text>
+  </View>
   </Card>
     </View>
 </View>
